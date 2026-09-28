@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+*.log
+.idea/
+.vscode/
+*.pt
+*.bin
+checkpoints/
+.push_cache.json

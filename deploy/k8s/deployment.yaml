@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: panguforge
+  labels:
+    app: panguforge
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: panguforge
+  template:
+    metadata:
+      labels:
+        app: panguforge
+    spec:
+      containers:
+        - name: panguforge
+          image: panguforge:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+          resources:
+            requests:
+              cpu: "500m"
+              memory: "512Mi"
+            limits:
+              cpu: "2"
+              memory: "2Gi"
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 10

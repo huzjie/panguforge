@@ -1,0 +1,24 @@
+replicaCount: 2
+
+image:
+  repository: panguforge
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: LoadBalancer
+  port: 80
+
+resources:
+  requests:
+    cpu: 500m
+    memory: 512Mi
+  limits:
+    cpu: "2"
+    memory: 2Gi
+
+config:
+  backend: mock
+  mock:
+    skill_init: 0.4
+    lr: 0.05

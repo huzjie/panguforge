@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "panguforge"
+version = "1.0.0"
+description = "openPangu-2.0 style MoE LLM full-pipeline training & inference framework (Ascend-native)"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "智能交付知识工程组" }]
+keywords = ["moe", "llm", "training", "sft", "rlhf", "grpo", "ascend", "openpangu", "sparse-attention"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.optional-dependencies]
+yaml = ["PyYAML>=6.0"]
+transformers = ["transformers>=4.40"]
+vllm = ["vllm>=0.5"]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+panguforge = "panguforge.cli.main:main"
+
+[tool.setuptools.packages.find]
+include = ["panguforge*"]

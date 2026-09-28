@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  panguforge:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - PANGU_CONFIG=/app/config.example.yaml
+    restart: unless-stopped

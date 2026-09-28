@@ -1,0 +1,2 @@
+# panguforge core is zero-dependency. Optional extras below.
+PyYAML>=6.0

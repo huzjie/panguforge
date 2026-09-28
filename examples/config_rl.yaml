@@ -1,0 +1,16 @@
+model:
+  vocab_size: 512
+  dim: 64
+  num_heads: 4
+  num_layers: 2
+  moe_hidden: 256
+  num_experts: 8
+  top_k: 2
+backend: mock
+mock:
+  skill_init: 0.4
+  lr: 0.05
+rl:
+  algorithm: grpo
+  steps: 40
+log_every: 10

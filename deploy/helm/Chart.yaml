@@ -1,0 +1,6 @@
+apiVersion: v2
+name: panguforge
+description: openPangu-2.0 style MoE LLM training & inference framework
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
